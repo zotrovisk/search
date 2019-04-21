@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+<h:head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+
+
+$(document).on('click','.favorito',function(){
+	$(this).prop('disabled',true);
+	
+});
+
+
+
+
+</script>
+
+<h:outputStylesheet />
+
+<style type="text/css">
+
+	#main{
+	margin-left:80px;
+}
+
+p{
+    font-style:italic;
+    }
+    
+h3{
+		font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: arial, sans-serif;
+}    
+
+</style>
+</h:head>
+
+<h:body>
+	
+	
+	
+<div id = "main" >
+<b:row>
+  <b:column  col-xs="14" col-md="11">
+    
+    <b:well style="background-color:#ffffff;height:450px">
+    
+		<div id="btnSideMenu">
+ <p:commandButton oncomplete="PF('sidebar2').show()" style="color:#002aff;margin-left:1000px;margin-top:10px;background-color:#B7C6EE;width:33px;height:35px" value="" icon="fa fa-star" title="Favoritos"/>    
+    </div>
+  <div style="margin-top:-50px;margin-left:230px" id="container" >
+  
+  <b:column style="margin-left:105px" span="3" col-xs="12" col-md="8">
+       <p:separator style="margin-left:-320px;width:900px"></p:separator>
+  </b:column>
+  
+    
+  </div>
+  
+  <b:column style="margin-left:350px;margin-top:-50px" span="6" col-xs="12" col-md="8">
+    	<h:outputText  style="font-style: italic;font-weight: bold;font-size:25px;font-family: arial, sans-serif" value="#{prodDesc.nome}" />
+  </b:column>
+  
+  	<b:column id ="textoDesc" style="margin-left:20px" col-xs="12" col-md="8">
+  	<div id="textoDesc" >
+  	  	   	   	<p:commandButton actionListener="#{Msg.buttonAction}"  action="#{prodBean.favoritar}" style="width:180px;background-color:#F3F077;margin-left:700px;margin-top:-150px" value="Favoritar Produto" id="favorito" class="favorito"  icon="fa fa-fw fa-star" />
+  	
+  	 <h:outputText id="nomeProd" style="font-style: italic;font-weight: bold;font-size:20px;font-family: arial, sans-serif" value="#{prodDesc.nome}" />
+  	 <br></br><br></br>
+  	 <h:outputText id="especTec" style="font-style: italic;font-size:15px;font-family: arial, sans-serif" value="#{prodDesc.especTecProd}" />
+  	 <br></br><br></br><br></br> 
+  	 <h:outputText id="precoProd" style="margin-top:-50px;color:#4c5a8a;font-style: italic;font-size:15px;font-family: arial, sans-serif" value="#{prodDesc.nomePreco1Colocado}"/>
+	 <br></br><br></br>
+	 
+	<b:flyOutMenu style="background-color:#cedaf0;width:300px;margin-top:-20px" >
+	 <h:outputText  style="color:#12245f;margin-left:45px;font-style: italic;font-weight: bold;font-size:15px;font-family: arial, sans-serif" value="Sites Comparados(Ranking)" />
+  
+  		<b:panelGrid columns="4" style="margin-top:10px">
+ 
+  <b:badge style="margin-left:10px" value="1º"/>
+  <b:label  text="#{prodDesc.siteColocation(1)}" style="margin-left:-40px" severity="success">    
+  	    <b:link href="#{prodDesc.url}" target="_blank" value="visitar" style="margin-left:1px" />
+  
+  </b:label>
+  <b:badge style="margin-left:10px" value="2º" />
+  <b:label style="margin-left:-40px" text="#{prodDesc.siteColocation(2)}" severity="warning"/>
+   
+  <b:badge style="margin-left:10px" value="3º" />
+  <b:label style="margin-left:-40px" text="#{prodDesc.siteColocation(3)}" severity="primary"/>
+  
+  <b:badge style="margin-left:10px" value="4º"/>
+  <b:label style="margin-left:-40px" text="#{prodDesc.siteColocation(4)}" severity="info"/>
+
+</b:panelGrid>
+          <p:separator />
+          
+          
+     <b:dropButton style="margin-left:5px" value="Sites" drop="up" >
+  <b:navLink style="margin-left:50px;font-weight:bold;font: 15px arial, sans-serif;color:black" header="Ranking"></b:navLink>
+   <p:separator style="background-color:#ECEEF5;width:216px"></p:separator>
+  <b:navLink value="#{prodDesc.nomePreco(1)}" target="_blank" href= "#{prodDesc.urlSiteColocacao(1)}"></b:navLink>
+  <b:navLink value="#{prodDesc.nomePreco(2)}" target="_blank" href= "#{prodDesc.urlSiteColocacao(2)}"></b:navLink>
+  <b:navLink value="#{prodDesc.nomePreco(3)}" target="_blank" href= "#{prodDesc.urlSiteColocacao(3)}"></b:navLink>
+  <b:navLink value="#{prodDesc.nomePreco(4)}" target="_blank" href= "#{prodDesc.urlSiteColocacao(4)}"></b:navLink>
+  <b:navLink value="#{prodDesc.nomePreco(5)}" target="_blank" href= "#{prodDesc.urlSiteColocacao(5)}"></b:navLink>
+  <b:navLink value="#{prodDesc.nomePreco(6)}" target="_blank" href= "#{prodDesc.urlSiteColocacao(6)}"></b:navLink>
+  <b:navLink value="#{prodDesc.nomePreco(7)}" target="_blank" href= "#{prodDesc.urlSiteColocacao(7)}"></b:navLink>
+  <b:navLink value="#{prodDesc.nomePreco(8)}" target="_blank" href= "#{prodDesc.urlSiteColocacao(8)}"></b:navLink>
+  <b:navLink value="#{prodDesc.nomePreco(9)}" target="_blank" href= "#{prodDesc.urlSiteColocacao(9)}"></b:navLink>
+  <b:navLink value="#{prodDesc.nomePreco(10)}" target="_blank" href= "#{prodDesc.urlSiteColocacao(10)}"></b:navLink>
+ 
+</b:dropButton>     
+    
+  
+</b:flyOutMenu>	
+	</div>
+  </b:column>
+  
+  
+  	<b:column id ="imgDesc" col-xs="12" col-md="8">
+  	
+  	
+  	<div style="margin-left:100px" id="imgDescricao">
+
+			    <img style="margin-top:-300px;width:200px;height:200px;margin-left:550px" src="#{prodDesc.urlImgByProduto}"/>
+				
+	</div>
+  </b:column>
+
+    </b:well>
+  </b:column>
+
+</b:row>
+
+ 
+
+</div>
+
+ 
+  
+
+	
+	
+	
+
+</h:body>
+</html>

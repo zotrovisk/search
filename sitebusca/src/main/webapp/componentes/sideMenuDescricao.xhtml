@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+<h:head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+<h:outputStylesheet />
+
+<style type="text/css">
+
+
+#panelSideMenu{
+	position: fixed;
+	border:none;
+}
+
+.painelDesc {
+border: none;
+padding: 5px;
+width: 200px;
+height: 200px;
+overflow: scroll;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+::-webkit-scrollbar-track {
+background: #f5f5f5;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+background: #ccc;  
+}
+
+::-webkit-scrollbar-thumb:hover {
+background: #999;  
+}
+
+</style>
+</h:head>
+
+<h:body>
+	<ui:fragment >
+	
+	
+ 
+   <div id="panelSideMenu"  class="ui-fluid">
+   
+  	
+  		<div id ="options">
+	
+  		
+  		
+        <h:panelGrid  columns="1">
+			
+			<!-- SlideMenu -->
+			
+	<h:form>
+		<p:menu style="background-color:#ffffff; border:0px; box-shadow: 1px 1px 1px 1px #C2C8CA; margin-left:-1px;width:230px;height:600px;margin-top:-55px;margin-bottom:-7px"  my="left top" at="right top" model="#{prodDesc.menu2}">
+		</p:menu>
+	</h:form>				
+			
+	
+ 
+	
+	
+	  
+        </h:panelGrid>
+     
+      
+        
+        </div>
+        
+           
+           </div>
+        
+           
+	</ui:fragment>
+	
+	
+
+</h:body>
+</html>

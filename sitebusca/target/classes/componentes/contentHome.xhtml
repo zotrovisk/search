@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+<h:head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+
+<h:outputStylesheet />
+
+<style type="text/css">
+
+	#main{
+	margin-left:80px;
+	width: 1200px;
+	height: 1000px;
+}
+
+p{
+    font-style:italic;
+    }
+    
+h3{
+		font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: arial, sans-serif;
+}    
+
+</style>
+</h:head>
+	
+			  
+<h:body>
+	
+			  
+	
+<div id = "main" >
+
+    <h:form id="form2" class="ui-fluid">
+    
+    <!-- Painel de Detalhe -->
+    <p:dialog style="background-color:#ebeef2;"  header="Produto" widgetVar="prodDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+     
+        <p:outputPanel id="prodDetail" style="text-align:center;">
+            <p:panelGrid  columns="2"  columnClasses="label,value">
+                <f:facet name="header">
+				                <img style="width:200px;height:200px" src="#{prodBean.urlImg(prodBean.selectedProd.nomeProd)}"/>
+				                
+                </f:facet>
+ 
+                <h:outputText style="color:Black" value="Nome: " />
+                <h:outputText style="color:Black" value="#{prodBean.selectedProd.nomeProd}" />
+ 
+                <h:outputText style="color:Black" value="Subcategoria: " />
+                <h:outputText style="color:Black" value="#{prodBean.selectedProd.subCategoria.nomeSubCategoria}" />
+            
+            </p:panelGrid>
+            
+        </p:outputPanel>
+        
+    </p:dialog>
+    
+
+    <p:dataGrid  var="produto" value="#{prodBean.prods}" columns="3" layout="grid"
+        rows="12" paginator="true" id="cars" columnClasses="ui-grid-col-4,ui-grid-col-8"
+        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+         >
+ 
+
+ 
+        <p:panel  style="background-color:#ffffff">
+            <h:panelGrid columns="1" style="height:400px;width:100%">
+            
+             <div id="header prod">
+            
+            	<p:commandLink update="" oncomplete="PF('prodDialog').show()" title="Detalhes">
+                    
+                                    <p:graphicImage name="/img/search.png"/> 
+                    
+                    <f:setPropertyActionListener value="#{produto}" target="#{prodBean.selectedProd}" />
+                </p:commandLink>
+            
+            
+                
+               <img style="margin-left:110px;margin-top:-50px;width:100px;" src="#{prodBean.urlImg(produto.nomeProd)}"/>
+                    			
+                
+                </div>
+                
+               
+                
+ 
+               
+               <div id="content prod">
+                <h:outputText style="font-style: italic;font-weight: bold;font-size: 20px;font-family: arial, sans-serif;color:Black" value="#{produto.nomeProd}" />
+        	    <h:outputText style="font-style:italic;color:Black" value="#{produto.descricaoProd}" />
+        	   
+        	     <p>
+        	   
+			       	<h:commandLink action="#{prodBean.redirectDesc(produto)}"   style="color:#656b89">        	
+			       	Checar o preço mais barato do produto
+			       	 </h:commandLink>
+			       	
+        		 </p>
+        	
+        		  					</div>
+                
+            </h:panelGrid>
+        </p:panel>
+        
+        
+        
+ 
+    </p:dataGrid>
+    
+      
+</h:form>
+		
+</div>
+
+</h:body>
+</html>

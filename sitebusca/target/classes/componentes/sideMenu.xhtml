@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      
+      >
+
+<h:head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+<h:outputStylesheet />
+
+<style type="text/css">
+
+
+#panelSideMenu{
+	position: fixed;
+	border:none;
+}
+
+</style>
+
+<script>
+
+
+
+</script>
+
+</h:head>
+
+<h:body>
+	<ui:fragment >
+	
+	
+ 
+   <div id="panelSideMenu" class="ui-fluid">
+   
+  	
+	
+  		
+  		
+			
+			<!-- SlideMenu -->
+	<h:form id="sideMenu" >	
+	 
+    <div style="background-color:#F5EFFB; border:0px; box-shadow: 1px 1px 1px 1px #C2C8CA; margin-left:-1px;width:230px;height:600px;margin-top:-60px;margin-bottom:-7px">
+    	
+    			<p:graphicImage style="margin-left:-2px" name="/img/sideMenu.jpg"/> 
+    	
+    </div>
+        <p:growl id="messages" showDetail="false"/>
+    
+    
+     <p:slideMenu style="background-color:#5F7AD7;margin-top:-600px;height:250px" model="#{menuBean.model}" >
+   
+    </p:slideMenu>
+
+
+	<h:form>
+		<p:growl id="message"></p:growl>
+		<p:menu style="background-color:#ffffff" overlay="true" trigger="triggerButton" my="left top" at="right top" model="#{menuBean.menu}">
+		</p:menu>
+		<p:commandButton style="background-color:#5F7AD7" id="triggerButton" value="Produtos em Destaque"></p:commandButton>
+	</h:form>
+    
+	</h:form>	
+	
+           </div>
+        
+           
+	</ui:fragment>
+	
+	
+
+</h:body>
+</html>

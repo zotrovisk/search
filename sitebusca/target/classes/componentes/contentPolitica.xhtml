@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+<h:head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+
+<h:outputStylesheet />
+
+<style type="text/css">
+
+	#main{
+	margin-left:80px;
+}
+
+p{
+    font-style:italic;
+    }
+    
+h3{
+		font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: arial, sans-serif;
+}    
+
+
+
+</style>
+</h:head>
+
+<h:body>
+	<ui:fragment >
+	
+	
+<div id = "main" >
+
+
+<b:row>
+  <b:column  col-xs="14" col-md="11">
+	<div id="politica">
+
+	   
+
+    <b:well style="width:1005px;background-color:#ffffff;height:500px">
+
+	<div id="btnSideMenu">
+ <p:commandButton oncomplete="PF('sidebar2').show()" style="color:#002aff;margin-left:1000px;background-color:#B7C6EE;width:35px;height:35px" value="" icon="fa fa-star" title="Favoritos"/>
+    </div>
+
+	<p style="color:black;font-family: arial, sans-serif;font-size:20px" > Políticas do Site </p>
+	<p style="color:black;font-family: arial, sans-serif"> Termos de Uso </p>
+	
+   
+    <p style="color:black;font-family: arial, sans-serif">.Descrição dos Serviços.</p>
+  <p style="color:black;font-family: arial, sans-serif">      
+  O Site <b:navLink outcome="#{prodBean.redirectHome}" value="Search TI" icon="home"></b:navLink>  oferece ao usuário, a título gratuito, um sistema de pesquisa de informações cujo objetivo é oferecer aos usuários um serviço de busca e
+  comparação de condições de venda de produtos e serviços, através de busca personalizada em lojas online, por meio do qual os usuários podem encontrar produtos, 
+  bem como informações sobre os preços.
+   </p>
+   
+   <p style="color:black;font-family: arial, sans-serif">
+   O Search TI disponibiliza uma lista de preços e informações diversas sobre variados produtos e serviços oferecidos por diversas lojas
+   online nacionais e internacionais nos exatos termos dos dados obtidos junto aos referidos sites, nos moldes de um serviço de anúncios de classificados
+   de jornais. Nos casos em que o usuário manifeste a intenção de comprar qualquer produto ou serviço que resultou da pesquisa realizada, o Site direcionará o usuário para o site 
+   da empresa responsável pela oferta, para que o usuário possa realizar a compra do produto no site da referida empresa 
+   </p>
+   
+   <p style="color:black;font-family: arial, sans-serif">
+   
+   Por ser um canal que disponibiliza gratuitamente seus serviços e também por não comercializar produtos 
+   e serviços, o Site não é responsável, em qualquer hipótese, por produtos ou serviços adquiridos pelo usuário,
+    tampouco pela relação entre
+    o usuário e a loja online escolhida para efetuar a aquisição de produtos ou serviços.
+   
+   </p>
+   
+   <p style="color:black;font-family: arial, sans-serif">As condições de venda, preço e entrega de produtos são definidas diretamente pelas empresas responsáveis pelas ofertas.</p>
+   
+   
+   
+	
+	</b:well>
+	</div>
+  </b:column>
+
+</b:row>
+
+ 
+
+</div>
+
+ 
+  
+
+	
+	
+</ui:fragment>	
+
+</h:body>
+</html>

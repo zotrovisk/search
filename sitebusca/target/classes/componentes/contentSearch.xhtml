@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+<h:head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+
+<h:outputStylesheet />
+
+<style type="text/css">
+
+	#main{
+	margin-left:80px;
+}
+
+p{
+    font-style:italic;
+    }
+    
+h3{
+		font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: arial, sans-serif;
+}    
+
+</style>
+</h:head>
+
+<h:body>
+	<ui:fragment >
+	
+	
+<div id = "main" >
+
+
+
+<b:row>
+  <b:column col-xs="14" col-md="11">
+    <b:well style="width:1005px">
+      
+
+  <div id="container" class="clear">
+
+    
+    
+    
+    <!-- main content -->
+    <div id="homepage">
+	
+	
+    <h:form id="form">
+    
+<p:dataScroller  value="#{getProdSearch.produtosFiltrados}" var="produto" chunkSize="10" columnClasses="ui-grid-col-4,ui-grid-col-8">
+        <f:facet name="header">
+        </f:facet>
+        
+        
+ 
+      
+      
+      
+       
+        	   
+			       	<h:commandLink action="#{prodBean.redirectDesc(produto)}" actionListener="#{prodDesc.paransValue}"  style="color:#656b89"> 
+			       	
+			       			
+								<h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+					                                    <p:graphicImage name="/img/placa.png"/> 
+					            <p:outputPanel>
+					                <h:panelGrid columns="2" cellpadding="5">
+					                    <h:outputText value="Nome: " />
+					                    <h:outputText value="#{produto.nomeProd}" style="font-weight: bold"/>
+					 
+					                    <h:outputText value="Categoria: " />
+					                    <h:outputText value="#{produto.nomeCat}" style="font-weight: bold"/>
+					 
+					                    <h:outputText value="Descrição: " />
+					                    <h:outputText value="#{produto.descricaoProd}" style="font-weight: bold"/>
+					                    
+					                    <h:outputText value="Preço: " />
+					                    <p:outputLabel style="font-weight: bold" value="#{prodBean.precoProd(produto)}" />
+					                </h:panelGrid>
+					            </p:outputPanel>
+					        </h:panelGrid>
+					        <br></br>
+					               <p:separator></p:separator>
+			       	
+			       
+			       	
+			       	 </h:commandLink>
+			       	
+      
+        
+    </p:dataScroller>
+</h:form>
+	
+    </div>
+    
+
+    <!-- / content body -->
+  </div>
+
+    </b:well>
+  </b:column>
+
+
+</b:row>
+
+
+
+</div>
+
+	
+	</ui:fragment>
+	
+
+</h:body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+<h:head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+<h:outputStylesheet />
+
+<style type="text/css">
+
+
+	#main{
+	margin-left:80px;
+}
+
+p{
+    font-style:italic;
+    }
+    
+h3{
+		font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: arial, sans-serif;
+}   
+
+</style>
+</h:head>
+
+<h:body>
+	
+	<div id = "main" >
+
+<b:row>
+  <b:column  col-xs="14" col-md="11">
+    <b:well style="width:1005px">
+      
+
+  <div  id="container" class="clear">
+  
+        <p:panel  style="background-color:#F5EFFB">
+    <h:panelGrid columns="1" style="margin-left:115px;width:100%">
+    <h:form style="margin-left:100px">
+    
+    <b:column style="width:300px;margin-left:-150px" span="3">
+  <b:panel style="height:250px">
+    <p:separator />
+    <p style="color:black;font-family: arial, sans-serif;">
+   O site <b:navLink  outcome="#{prodBean.redirectHome}" style="color:blue"  value="Search TI " icon="home"></b:navLink> têm o 
+   objetivo de filtrar para o usuário quais as páginas da internet que possuem os preços de produtos da área de tecnologia mais baratos.
+   Não havendo nenhuma espécie de vínculo com os sites ofertados nas buscas.  
+   
+   
+   </p>
+  </b:panel>
+</b:column>
+    
+<b:column span="3">
+  <b:panel style="height:250px">
+    <b:listLinks>
+      
+    <p:separator />
+      <b:navLink header="Informativo"/>
+      <b:navLink outcome="#{prodBean.pathPolitica}" value="Políticas do site" icon="link"></b:navLink>      
+    <p:separator />
+      
+  
+    </b:listLinks>
+  </b:panel>
+</b:column>
+
+<b:column  span="3">
+  <div  id ="panelGrid">
+
+<p:panelGrid style="width:250px;height:200px " columns="2">
+    <f:facet  name="header">
+        <p:graphicImage name="/img/placa.png"/><br></br>
+        <b:navLink icon-flip="h" iconAwesome="fa-facebook-official"
+           value="Curtir Página" target="_blank" href="https://www.facebook.com/Search-TI-1968254763475243/"
+           look="info"  />
+        
+    </f:facet>
+ 
+    <h:outputText value="Visite a nossa página no Facebook." />
+    
+</p:panelGrid>
+
+</div>
+</b:column>
+    
+  </h:form>
+  </h:panelGrid>
+  </p:panel>
+  <div style="margin-bottom:-50px;margin-left:240px;">
+  	    <p >Copyright ; 2018 - All Rights Reserved - Todos os direitos reservados.
+  	        <b:navLink outcome="#{prodBean.redirectHome}" value="Search TI" icon="home"></b:navLink> 
+  	      <p:graphicImage  style="margin-top:-8px;margin-left:10px" name="/img/developer_icon.png"  title="Developer By: Léo Ribeiro Júnior"/> 
+  	    
+  	    </p>
+  
+  </div>	
+  </div>
+
+    </b:well>
+  </b:column>
+
+
+</b:row>
+
+</div>
+
+	
+
+	
+
+</h:body>
+</html>

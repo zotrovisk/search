@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+<h:head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+
+<h:outputStylesheet />
+
+<style type="text/css">
+
+	#main{
+	margin-left:80px;
+}
+
+p{
+    font-style:italic;
+    }
+    
+h3{
+		font-style: italic;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: arial, sans-serif;
+}    
+
+</style>
+</h:head>
+
+<h:body>
+	<ui:fragment >
+	
+	
+<div id = "main" >
+
+
+
+<b:row>
+  <b:column  col-xs="14" col-md="11">
+    <b:well style="width:1005px">
+      
+
+  <div id="container" class="clear" >
+
+    
+    
+    
+    <!-- main content -->
+    <div id="homepage" >
+	
+	
+    <h:form id="form">
+   
+  
+  
+   <b:dataTable  style="margin-left:1px" value="#{prodBean.favoritos}"
+               var="produto"
+               page-length="10"
+               page-length-menu="10"  >
+    <f:facet name="header">
+      <tr>
+      <th colspan="2">
+      
+        	 <h:outputText id="favoritos" style="color:#0c1a61;margin-left:400px;font-style: italic;font-weight: bold;font-size:20px;font-family: arial, sans-serif" value="Favoritos" />
+      
+      </th>
+      </tr>
+      <tr>
+        <th>Nome do Produto</th>
+        <th>Categoria</th>
+        <th>SubCategoria</th>
+        <th>Menor Preço</th>
+        <th>Site</th>
+        
+      </tr>
+    </f:facet>
+    <b:dataTableColumn value="#{produto.nomeProd}" label="Nome do Produto" />
+    <b:dataTableColumn value="#{produto.nomeCat}" label="Categoria"/>
+    <b:dataTableColumn value="#{produto.subCategoria.nomeSubCategoria}" label="SubCategoria" />
+    <b:dataTableColumn value="#{prodBean.precoProd(produto)}"  order="asc" label ="Menor Preço"/>
+    <b:dataTableColumn label="Site" ><b:link target="_blank"  href="#{prodBean.urlSite(produto)}" value="site" />
+    </b:dataTableColumn>
+
+  </b:dataTable>
+  
+</h:form>
+	
+    </div>
+    
+
+    <!-- / content body -->
+  </div>
+
+    </b:well>
+  </b:column>
+
+
+</b:row>
+
+
+
+</div>
+	
+</ui:fragment>
+</h:body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+<h:head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+
+<h:outputStylesheet />
+
+<style type="text/css">
+
+
+</style>
+</h:head>
+
+<h:body>
+<ui:fragment >
+
+
+<h:form>
+
+<div   id="favoriteMenu" class="ui-fluid">
+<p:sidebar  style="margin-top:100px;width:196px;height:497px" widgetVar="sidebar2" position="right" baseZIndex="10000" >
+
+
+<div style="margin-left:-19px" id="header">
+
+			<p:graphicImage style="margin-top:-28px" name="/img/panel-favorite3.jpg" /> 
+
+</div>
+
+
+<div style="margin-top:-350px" id="componentes">
+
+			
+			<h:form>
+ 			 <b:panelGrid colSpans="6,6" size="sm">
+ 			 	 <b:button style="margin-left:-5px;width:170px" outcome="#{prodBean.redirectFavorito}" look="primary" value="Acessar Favoritos" icon="star" />	
+ 			 </b:panelGrid>
+			</h:form>
+	</div>
+	
+</p:sidebar>
+
+
+	
+    </div>	
+    
+		
+</h:form>
+
+ 
+
+</ui:fragment>
+	
+
+</h:body>
+</html>

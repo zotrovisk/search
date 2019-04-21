@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"  
+      >
+    
+    <h:head>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    
+      
+         <style>
+         
+     	
+        
+         #footer{
+         margin-top:-50px;   
+         }
+         
+         #center{
+         width:1200px;
+         float:right;
+         margin-left:200px;
+         margin-top:243px;
+         }
+         
+         #content{
+          margin-top:-100px;
+         
+         }
+         
+         #menuLateral{
+           margin-top:20px;
+         
+         }
+         
+         
+       #navlinks{
+         margin-left:100px;
+       
+       }
+       
+       #sideMenuNavBar{
+       position:fixed;
+       }
+         
+      
+         
+         
+         </style>  
+    </h:head>
+    
+    <h:body>
+    
+    
+     
+	 <div id="center">
+	   
+     <div style="margin-left:50px" id="content">
+              <ui:insert name="content">
+              <ui:include src="/componentes/contentSearch.xhtml"/>
+              </ui:insert>
+            
+     </div>
+    
+     <div style="margin-left:50px" id="footer">
+              <ui:insert name="footer">
+              <ui:include src="/componentes/footer.xhtml"/>
+              </ui:insert>
+     </div>
+     
+     <div style="margin-top:-100px;margin-left:50px">  
+	              <ui:insert name="sideMenuFavorite">
+	              <ui:include src="/componentes/favoriteMenu.xhtml"/>
+	              </ui:insert>
+            </div>  
+   
+   </div>
+   
+   
+   
+   
+   <div id="sideMenuNavBar" >
+   
+   <div id="imgheader">
+		 <div id="navbarimg">
+	              <ui:insert name="imgheader">
+	               <ui:include src="/componentes/imgnavbar.xhtml"/>
+	              </ui:insert>
+	     </div>
+	</div>
+	
+	<div id="navlinks">
+		 <div id="navlinkscomponents">
+	              <ui:insert name="navbarlinks">
+	               <ui:include src="/componentes/navbarlinks.xhtml"/>
+	              </ui:insert>
+	     </div>
+	</div>
+	
+	
+	
+	
+	  <div  id ="menuLateral">
+	   <div  id="sideMenu">
+	              <ui:insert name="sideMenu">
+	              <ui:include src="/componentes/sideMenu.xhtml"/>
+	              </ui:insert>
+	    </div>	
+   </div>
+   
+  
+  
+   	 
+      
+    
+   </div>
+    
+	
+    
+ 
+   
+   
+     
+   
+   			      
+    </h:body>
+ </html>

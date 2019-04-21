@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      
+      >
+
+<h:head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+
+<h:outputStylesheet />
+
+<script>
+
+
+function limita(numero){
+	  var max_numeros = 5;
+	  console.log("Valor numero: "+numero.value);
+	  if(numero.value.length > max_numeros) {
+	    numero.value = numero.value.substr(0, max_numeros);
+	  }
+	}
+	
+function teste1(){
+	
+	var teste4 = $('#teste1').val();
+
+	alert("value: "+teste4);
+	alert("testescript ....");
+}
+
+
+</script>
+
+
+<style type="text/css">
+
+#navBar{
+    
+    font-family: "Helvetica Neue";
+    font-size: 22px;
+  
+}
+
+
+   
+   #lblUsuario {
+  font-family: "Gill Sans Extrabold", Helvetica, sans-serif;
+}
+
+#textNavLink{
+	font-family: "Helvetica Neue";
+    font-size: 18px;
+	color:black;
+	font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+</style>
+</h:head>
+
+<h:body>
+<ui:fragment >
+	  <h:form id="searchProd" style="margin-left:120px;width:1140px">
+	  
+  <div id="subMenuNavBar">
+    
+ 
+    <p:menubar style="background-color:#F5EFFB">
+            <f:facet  name="options">
+
+          <b:navLink outcome="#{prodBean.redirectHome}">
+          	  				<p:graphicImage  style="margin-left:-800px" name="/img/icone_home3.png"  title="HomePage"/>         
+          </b:navLink>      
+    
+    	        </f:facet>
+    	
+    	            <f:facet  name="options">
+    					<div style="margin-left:100px" class="dropdown">
+							 <span>Log In</span>
+							 <div  style="margin-padding : 20px;background-color#D8D8D8;height:300px;width:250px" class="dropdown-content">
+						
+							 <h:form>
+							 	
+							   <label id="lblUsuario" style="font-family:sans-serif;color:#A9A9F5" >Usuário:</label>								
+							   <p:inputText value="#{getValidationBean.usuario.nomeUsu}" onkeydown="limita(this);" onkeyup="limita(this);" id="inputUsu" type="text"/>
+							   <br></br>
+							   <br></br>
+							   <label style="color:#A9A9F5" >Senha:</label>
+							   <p:inputText value="#{getValidationBean.usuario.senhaUsu}" id="inputPass" onkeydown="limita(this);" onkeyup="limita(this);" type="password"/>
+							   <br></br>
+							   <br></br>
+							   <a href="" style="text-decoration: underline">esqueceu a senha?</a>
+							   	<br></br>
+							   <a href="" style="text-decoration: underline">criar uma conta</a>
+							    <br></br>
+							    <p:commandButton id="validarLogin" value="validar"
+								actionListener="#{getValidationBean.valida}"/>
+							
+							 </h:form>
+															   	
+							   <br></br>							   
+							   
+							   
+							 </div>
+						</div>
+					
+    				</f:facet>
+    				
+    				
+    				
+    
+        <f:facet  name="options">
+        <div style="margin-top:-30px" >
+
+     <!--
+     
+     <f:facet  name="options">
+    					<div style="margin-left:100px" class="dropdown">
+							 <span style="color:#A9A9F5">Log Out</span>
+							 <div  style="margin-padding : 20px;background-color:#D8D8D8" class="dropdown-content">
+							   
+							   <p:commandButton value="Log Out" id="withIcon" style="margin-top:-20px;background-color:#A9A9F5" icon="pi pi-save" />
+							   
+							   <br></br>							   
+							   
+							   
+							 </div>
+						</div>
+					
+    				</f:facet>
+       -->
+		
+			<h:panelGrid columns="3">
+			
+			<h:form id = "teste2">
+				<h:inputText type="text" style="height:22px;box-shadow: 1px 1px 2px #333333;border-radius:4px" placeholder="filtrar" id="precoProd" value="#{getProdSearch.produto.nomeProd}" maxlength="83" title="Buscar pelo nome do Produto,preço ou subcategoria."/>
+				
+				<p:graphicImage style="height:25px;margin-left:-30px" name="/img/search2.png" /> 
+					
+				<b:commandButton id="teste55" onclick="teste1();" value="teste1"
+				   style="display: none"/>
+								
+			</h:form>
+			</h:panelGrid>
+       
+		</div>
+            	
+	
+        </f:facet>
+  
+        
+    </p:menubar>
+  
+  
+ </div> 
+ </h:form>
+ <h:form>
+	<b:container fluid="true">
+<div style="color:black"  id="navBar">
+	
+  <b:navbarLinks style="margin-top:-100px;
+  margin-left:400px">
+ 
+    <b:dropMenu  style="color:#22286C;width:200px" value="Hardware" iconAwesome="fa-bars" >
+        <div style = "background-color:#F5EFFB;">
+    
+    <b:iconAwesome name="cog" spin="true" size="2x" />
+             
+          <b:column style="margin-left:-5px" span="6" col-xs="12" col-md="8">
+    		  <b:navLink></b:navLink>
+              <b:navLink></b:navLink>
+<b:navCommandLink     actionListener="#{getProdSearch.filtrar3('Processador')}"><h1 id="textNavLink">Processador</h1></b:navCommandLink>              
+              <b:navLink></b:navLink>
+              <b:navLink></b:navLink>
+            
+      <b:navCommandLink     actionListener="#{getProdSearch.filtrar3('SSD')}"><h1 id="textNavLink">SSD</h1></b:navCommandLink>
+              <b:navLink></b:navLink>
+              <b:navLink></b:navLink>
+    		 </b:column>
+    		 
+    		 <b:column style="margin-top:10px" span="6" col-xs="12" col-md="8">
+             <br></br> <b:navLink></b:navLink>
+             <b:navCommandLink     actionListener="#{getProdSearch.filtrar3('Coolers')}"><h1 id="textNavLink" >Coolers</h1></b:navCommandLink>
+                 <b:navCommandLink     actionListener="#{getProdSearch.filtrar3('Placas mae')}"><h1 id="textNavLink">Placas-mãe</h1></b:navCommandLink>
+    
+            
+    		 </b:column>
+    		 </div>
+ <!-- ******************************************************* -->           
+ 
+ 
+ 		     <b:column span="6" col-xs="12" col-md="8">
+ 		     
+    		                   <b:navCommandLink     actionListener="#{getProdSearch.filtrar3('Memoria RAM')}"><h1 id="textNavLink">Memoria RAM</h1></b:navCommandLink>
+              <b:navLink></b:navLink>
+              <b:navLink></b:navLink>
+                  		       <b:navCommandLink     actionListener="#{getProdSearch.filtrar3('Fontes')}"><h1 id="textNavLink">Fontes</h1></b:navCommandLink>
+              
+	             
+              <b:navLink></b:navLink>
+              <b:navLink></b:navLink>
+    		 </b:column>
+    		 
+    		 <b:column style="margin-left:-5px" span="6" col-xs="12" col-md="8">
+    		  <b:navLink></b:navLink>
+              <b:navLink></b:navLink>
+                                		                   <b:navCommandLink     actionListener="#{getProdSearch.filtrar3('Placas de Video')}"><h1 id="textNavLink">Placas de Video</h1></b:navCommandLink>
+              
+              <b:navLink></b:navLink>
+              <b:navLink></b:navLink>
+                                              		                   <b:navCommandLink     actionListener="#{getProdSearch.filtrar3('Rede Wireless')}"><h1 id="textNavLink">Rede Wireless</h1></b:navCommandLink>
+              
+            
+              <b:navLink></b:navLink>
+              <b:navLink></b:navLink>
+          
+    		 </b:column>
+   </b:dropMenu>
+    
+    <b:dropMenu style="margin-left:-5px;color:#22286C" value="Computadores" iconAwesome="fa-bars">
+    <div style = "background-color:#F5EFFB;">
+    <b:iconAwesome name="cog" spin="true" size="2x" />
+    	   <b:column col-xs="12" col-md="8">
+    		
+            <b:navLink></b:navLink>
+            <b:navLink></b:navLink>            
+      <b:navCommandLink   style = "font-weight: bold; font-size: 18px;color:black;margin-left:5px" value="Computador"  actionListener="#{getProdSearch.filtrar3('Computador')}"></b:navCommandLink>           
+            <b:navLink></b:navLink>
+            <b:navLink></b:navLink>
+      <b:navCommandLink   style = "font-weight: bold; font-size: 18px;color:black;margin-left:5px" value="Servidores"  actionListener="#{getProdSearch.filtrar3('Servidores')}"></b:navCommandLink>           
+           <b:navLink></b:navLink>
+           <b:navLink></b:navLink>
+       		<b:navCommandLink   style = "font-weight: bold; font-size: 18px;color:black;margin-left:5px" value="Notebooks"  actionListener="#{getProdSearch.filtrar3('Notebooks')}"></b:navCommandLink>           
+       		
+           <b:navLink></b:navLink>
+           <b:navLink></b:navLink>
+            <b:navCommandLink   style = "font-weight: bold; font-size: 18px;color:black;margin-left:5px" value="Computadores Gamers"  actionListener="#{getProdSearch.filtrar3('Computadores Gamers')}"></b:navCommandLink>           
+   
+          </b:column>
+          
+        </div>
+      </b:dropMenu>
+    
+    
+    
+    <b:dropMenu style="margin-left:10px;color:#22286C" value="Monitores" iconAwesome="fa-bars" >
+        <div style = "background-color:#F5EFFB;">
+    
+    <b:iconAwesome name="cog" spin="true" size="2x" />
+    		    	   <b:column col-xs="12" col-md="8">
+    		
+    
+            <b:navLink></b:navLink>
+            <b:navLink></b:navLink>
+                  <b:navCommandLink   style = "font-weight: bold; font-size: 18px;color:black;margin-left:5px" value="LCD"  actionListener="#{getProdSearch.filtrar3('LCD')}"></b:navCommandLink>           
+            
+            <b:navLink></b:navLink>
+            <b:navLink></b:navLink>
+                        <b:navCommandLink   style = "font-weight: bold; font-size: 18px;color:black;margin-left:5px" value="LED"  actionListener="#{getProdSearch.filtrar3('LED')}"></b:navCommandLink>           
+      
+           <b:navLink></b:navLink>
+           <b:navLink></b:navLink>
+                           <b:navCommandLink   style = "font-weight: bold; font-size: 18px;color:black;margin-left:5px" value="Gamers"  actionListener="#{getProdSearch.filtrar3('Gamers')}"></b:navCommandLink>           
+               <b:navLink></b:navLink>
+            <b:navLink></b:navLink>
+                                       <b:navCommandLink   style = "font-weight: bold; font-size: 18px;color:black;margin-left:5px" value="LFD"  actionListener="#{getProdSearch.filtrar3('LFD')}"></b:navCommandLink>           
+          
+            	   </b:column>
+          
+          
+           </div>
+      
+      </b:dropMenu>
+    
+    
+    <b:dropMenu style="margin-left:10px;color:#22286C" value="Armazenamento" iconAwesome="fa-bars" >
+        <div style = "background-color:#F5EFFB;">
+    	
+    	
+    <b:iconAwesome name="cog" spin="true" size="2x" />
+        	   <b:column col-xs="12" col-md="8" >
+    
+            <b:navLink></b:navLink>
+            <b:navLink></b:navLink>
+                                                   <b:navCommandLink   style = "font-weight: bold; font-size: 18px;color:black;margin-left:5px" value="Pen Drive"  actionListener="#{getProdSearch.filtrar3('Pen Drive')}"></b:navCommandLink>           
+            
+            <b:navLink></b:navLink>
+            <b:navLink></b:navLink>
+                                                   <b:navCommandLink   style = "font-weight: bold; font-size: 18px;color:black;margin-left:5px" value="Disco Rígido (HD)"  actionListener="#{getProdSearch.filtrar3('HD')}"></b:navCommandLink>           
+            
+       	   </b:column>
+   
+      </div>
+      </b:dropMenu>
+    
+    
+  </b:navbarLinks>
+  
+  
+  <!--   -->
+ 
+
+</div>
+</b:container>
+</h:form>
+
+
+	
+	
+	</ui:fragment>
+
+</h:body>
+</html>
