@@ -58,12 +58,14 @@ public class RankingSites implements  Serializable{
 	public Site getSite() {
 		return site;
 	}
-
+	
 	public void setSite(Site site) {
 		this.site = site;
 	}
 
-	
+	public void teste1() {
+		System.out.println("teste1");
+	}
 	
 	
 	
