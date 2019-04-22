@@ -18,10 +18,7 @@
          
      	
         
-         #footer{
-         margin-top:-50px;   
-         
-         }
+       
          
          #center{
          width:1200px;
@@ -31,7 +28,7 @@
          }
          
          #content{
-          margin-top:-163px;
+          margin-top:-100px;
          
          }
          
@@ -48,51 +45,37 @@
        
        #sideMenuNavBar{
        position:fixed;
-       margin-left:-105px;
        }
-         
+
       
-       
          
          
          </style>  
     </h:head>
     
     <h:body>
-    	
-    	
-    	
-	   
     
-        <b:container>
-    
-     
-	  
     
      
 	<div id="center">
 	   
-     <div style="margin-left:120px" id="footer">
+     <div style="margin-left:50px" id="content">
+              <ui:insert name="content">
+              <ui:include src="/componentes/contentHome.xhtml"/>
+              </ui:insert>
+     </div>
+     
+     
+      <div style="margin-left:50px" id="footer">
               <ui:insert name="footer">
               <ui:include src="/componentes/footer.xhtml"/>
               </ui:insert>
-     </div> 
-   
+     </div>
+
    </div>
    
    
-   
-   
    <div id="sideMenuNavBar">
-   
-     <div id="imgheader">
-		 <div id="navbarimg">
-	              <ui:insert name="imgheader">
-	               <ui:include src="/componentes/contentHome.xhtml"/>
-	              </ui:insert>
-	     </div>
-	</div>
-   
    
    <div id="imgheader">
 		 <div id="navbarimg">
@@ -118,11 +101,12 @@
 	              </ui:insert>
 	    </div>	
    </div>
-    
+   
+   
    </div>
     
 	
-    </b:container>
+    
  
    
    
