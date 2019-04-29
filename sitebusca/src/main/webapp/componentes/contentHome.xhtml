@@ -18,10 +18,14 @@
 
 <style type="text/css">
 
+				#footerConent{
+					margin-left:-80px;
+			}	
+
 	#main{
 	margin-left:80px;
-	width: 1200px;
-	height: 1000px;
+	width: 1000px;
+	height: 500px;
 }
 
 p{
@@ -124,13 +128,17 @@ h3{
     
       
 </h:form>
-		
-			<ui:insert name="footer">
-             	 <ui:include src="/componentes/footer.xhtml"/>
-            </ui:insert>
+		<div id ="footerConent">
+			 <ui:insert name="footer">
+                <ui:include src="/componentes/footer.xhtml"/>
+              </ui:insert>
 
-		
+		</div>
+				
 </div>
+
+             
+
 
 </h:body>
 </html>
