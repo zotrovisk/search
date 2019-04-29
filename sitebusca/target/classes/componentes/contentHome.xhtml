@@ -18,9 +18,9 @@
 
 <style type="text/css">
 
-	#main{
+	#mainContent{
 	margin-left:80px;
-	width: 1200px;
+	width: 1005px;
 	height: 1000px;
 }
 
@@ -43,7 +43,7 @@ h3{
 	
 			  
 	
-<div id = "main" >
+<div id = "mainContent" >
 
     <h:form id="form2" class="ui-fluid">
     
@@ -71,7 +71,7 @@ h3{
     
 
     <p:dataGrid  var="produto" value="#{prodBean.prods}" columns="3" layout="grid"
-        rows="12" paginator="true" id="cars" columnClasses="ui-grid-col-4,ui-grid-col-8"
+        rows="6" paginator="true" id="cars" columnClasses="ui-grid-col-4,ui-grid-col-8"
         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
          >
  
@@ -124,6 +124,12 @@ h3{
     
       
 </h:form>
+
+
+ <ui:insert name="footer">
+	               <ui:include src="/componentes/footer.xhtml"/>
+</ui:insert>
+
 		
 </div>
 
